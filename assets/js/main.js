@@ -4,23 +4,17 @@ el:'#app',
 
 data: {
     url:"https://api.themoviedb.org/3/search/movie?api_key=f731de4dc238375a909e9a43cf8dd2da&query=",
-
-    query:"ritorno"
+    query:"",
 },
 methods:{
-
+    searchFilms(){
+        axios
+            .get(this.url + this.query)
+            .then(resp => {
+            console.log(resp.data.results)
+        }).catch(e => {
+            console.error(e);
+            alert("La chiamata all'API non è andata a buon fine, riprova più tardi")
+        })}
 },
-mounted(){
-    axios
-    .get(this.url + this.query)
-    .then(resp => {
-        console.log(resp.data.results)
-    }).catch(e => {
-        console.error(e);
-        alert("La chioamata all'API non è andata a buon fine, riprova più tardi")
-    })
-
-
-}
-
 })

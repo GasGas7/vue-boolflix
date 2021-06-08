@@ -15,24 +15,9 @@
     <!-- Call_VueJS -->
     <div id="app">
         <div class="searching_bar">
-            <input type="text">
-            <button type="submit" class="btn btn-primary">Search</button>
+            <input type="text" v-model="query">
+            <button type="submit" class="btn btn-primary" @click="searchFilms">Search</button>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
      <!-- Vue JS CDN -->
