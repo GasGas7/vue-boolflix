@@ -14,16 +14,24 @@
 <body>
     <!-- Call_VueJS -->
     <div id="app">
+        <!-- Barra di ricerca film al click -->
         <div class="searching_bar">
             <input type="text" v-model="query">
             <button type="submit" class="btn btn-primary" @click="searchFilms">Search</button>
         </div>
-        <div class="film" v-for="film in films">
-            <div>{{film.title}}</div>
-            <div v-if="film.title != film.original_title">{{film.original_title}}</div>
-            <div>{{film.original_language}}</div>
-            <div>{{film.vote_average}}</div>
+        <!-- /Barra di ricerca film al click -->
+
+        <!-- Elenco Film trovati-->
+        <div class="contenitore_films d-flex flex-wrap">
+            <div class="film text-center" v-for="film in films">
+                <div>Titolo: {{film.title}}</div>
+                <div v-if="film.title != film.original_title">Titolo originale: {{film.original_title}}</div>
+                <div>Language: {{film.original_language}}</div>
+                <div>Voto del film: {{film.vote_average}}</div>
         </div>
+        </div>
+        
+        <!-- /Elenco Film trovati -->
     </div>
 
      <!-- Vue JS CDN -->

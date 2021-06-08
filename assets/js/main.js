@@ -20,5 +20,5 @@ methods:{
             alert("La chiamata all'API non è andata a buon fine, riprova più tardi")
         })
     }
-},
+}
 })
