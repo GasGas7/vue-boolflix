@@ -8,7 +8,6 @@ data: {
     query:"",
     films:[],
     series:[],
-    url_language:"https:www.countryflags.io/${film.original_language}/flat/64.png"
 },
 
 methods:{
@@ -21,9 +20,9 @@ methods:{
             this.films=resp.data.results;
         }).catch(e => {
             console.error(e);
-            alert("La chiamata all'API non è andata a buon fine, riprova più tardi")
+            alert("La chiamata all'API non è andata a buon fine, riprova più tardi "+ e)
         })
-
+        this.series=null;
         axios
             .get(this.urlserie + this.query)
             .then(resp => {
@@ -31,7 +30,7 @@ methods:{
             this.series=resp.data.results;
         }).catch(e => {
             console.error(e);
-            alert("La chiamata all'API non è andata a buon fine, riprova più tardi")
+            alert("La chiamata all'API non è andata a buon fine, riprova più tardi. "+ e)
         })
     }
 }

@@ -26,19 +26,28 @@
             <div class="film text-center" v-for="film in films">
                 <div>Titolo: {{film.title}}</div>
                 <div v-if="film.title != film.original_title">Titolo originale: {{film.original_title}}</div>
-                <div>Language:<img :src="url_language"> </div>
+                <div v-if="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">Language:<img :src="'https:www.countryflags.io/' + film.original_language + '/flat/32.png'">
+                </div>
+                <div v-else-if="film.original_language = 'ja'">Language: <img src="https:www.countryflags.io/jp/flat/32.png"></div>
+                <div v-else-if="film.original_language == 'en' || film.original_language == 'us'">Language: <img src="https:www.countryflags.io/gb/flat/32.png"></div>
                 <div>Voto del film: {{film.vote_average}}</div>
             </div>
+        <!-- /Elenco Film trovati -->
 
+        <!-- Elenco Serie trovati -->
             <div class="film text-center" v-for="serie in series">
                 <div>Titolo: {{serie.name}}</div>
                 <div v-if="serie.name != serie.original_name">Titolo originale: {{serie.original_name}}</div>
-                <div>Language:</div>
+                <div v-if="serie.original_language != 'en' && serie.original_language != 'us'&& serie.original_language != 'ja'">Language:<img :src="'https:www.countryflags.io/' + serie.original_language + '/flat/32.png'">
+                </div>
+                <div v-else-if="serie.original_language = 'ja'">Language: <img src="https:www.countryflags.io/jp/flat/32.png"></div>
+                <div v-else-if="serie.original_language == 'en' || serie.original_language == 'us'">Language: <img src="https:www.countryflags.io/gb/flat/32.png"></div>
                 <div>Voto della serie: {{serie.vote_average}}</div>
             </div>
         </div>
+        <!-- /Elenco Serie trovati -->
         
-        <!-- /Elenco Film trovati -->
+        
     </div>
 
      <!-- Vue JS CDN -->
