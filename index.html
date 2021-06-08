@@ -18,6 +18,12 @@
             <input type="text" v-model="query">
             <button type="submit" class="btn btn-primary" @click="searchFilms">Search</button>
         </div>
+        <div class="film" v-for="film in films">
+            <div>{{film.title}}</div>
+            <div v-if="film.title != film.original_title">{{film.original_title}}</div>
+            <div>{{film.original_language}}</div>
+            <div>{{film.vote_average}}</div>
+        </div>
     </div>
 
      <!-- Vue JS CDN -->
