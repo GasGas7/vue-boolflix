@@ -26,9 +26,16 @@
             <div class="film text-center" v-for="film in films">
                 <div>Titolo: {{film.title}}</div>
                 <div v-if="film.title != film.original_title">Titolo originale: {{film.original_title}}</div>
-                <div>Language: {{film.original_language}}</div>
+                <div>Language:<img :src="url_language"> </div>
                 <div>Voto del film: {{film.vote_average}}</div>
-        </div>
+            </div>
+
+            <div class="film text-center" v-for="serie in series">
+                <div>Titolo: {{serie.name}}</div>
+                <div v-if="serie.name != serie.original_name">Titolo originale: {{serie.original_name}}</div>
+                <div>Language:</div>
+                <div>Voto della serie: {{serie.vote_average}}</div>
+            </div>
         </div>
         
         <!-- /Elenco Film trovati -->
