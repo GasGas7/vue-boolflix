@@ -23,13 +23,14 @@
         </div>
         <!-- /Barra di ricerca film al click -->
 
-        <!-- Elenco Film trovati-->
+        <!-- Contenitore -->
         <div class="contenitore_films d-flex flex-wrap">
+            <!-- Elenco Film trovati-->
             <div class="film text-center" v-for="film in films">
                 <div>
                     Titolo: {{film.title}}
                 </div>
-                <div v-if="film.title != film.original_title">
+                <div v-if="film.title != film.original_title"> 
                     Titolo originale: {{film.original_title}}
                 </div>
                 <div v-if="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">
@@ -68,11 +69,11 @@
                     Voto della serie: {{serie.vote_average}}
                 </div>
             </div>
+            <!-- /Elenco Serie trovati -->
         </div>
-        <!-- /Elenco Serie trovati -->
-
-
+        <!-- /Contenitore -->
     </div>
+    <!-- /Call_VueJS -->
 
     <!-- Vue JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
