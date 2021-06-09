@@ -12,7 +12,7 @@ data: {
 
 methods:{
     searchFilms(){
-        this.films=null;
+        this.films=[];
         axios
             .get(this.urlfilms + this.query)
             .then(resp => {
@@ -22,7 +22,7 @@ methods:{
             console.error(e);
             alert("La chiamata all'API non è andata a buon fine, riprova più tardi "+ e)
         })
-        this.series=null;
+        this.series=[];
         axios
             .get(this.urlserie + this.query)
             .then(resp => {
