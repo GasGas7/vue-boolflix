@@ -16,8 +16,8 @@ methods:{
         axios
             .get(this.urlfilms + this.query)
             .then(resp => {
-            console.log(resp.data.results)
-            this.films=resp.data.results;
+            console.log(resp.data)
+            this.films=resp.data;
         }).catch(e => {
             console.error(e);
             alert("La chiamata all'API non è andata a buon fine, riprova più tardi "+ e)
@@ -26,8 +26,8 @@ methods:{
         axios
             .get(this.urlserie + this.query)
             .then(resp => {
-            console.log(resp.data.results)
-            this.series=resp.data.results;
+            console.log(resp.data)
+            this.series=resp.data;
         }).catch(e => {
             console.error(e);
             alert("La chiamata all'API non è andata a buon fine, riprova più tardi. "+ e)

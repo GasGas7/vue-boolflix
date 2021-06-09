@@ -26,7 +26,7 @@
         <!-- Contenitore -->
         <div class="contenitore_films d-flex flex-wrap">
             <!-- Elenco Film trovati-->
-            <div class="film text-center" v-for="film in films">
+            <div class="film text-center" v-for="film in films.results">
                 <div>
                     Titolo: {{film.title}}
                 </div>
@@ -36,7 +36,7 @@
                 <div v-if="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">
                     Language:<img :src="'https:www.countryflags.io/' + film.original_language + '/flat/32.png'">
                 </div>
-                <div v-else-if="film.original_language = 'ja'">
+                <div v-else-if="film.original_language == 'ja'">
                     Language: <img src="https:www.countryflags.io/jp/flat/32.png">
                 </div>
                 <div v-else-if="film.original_language == 'en' || film.original_language == 'us'">
@@ -49,7 +49,7 @@
             <!-- /Elenco Film trovati -->
 
             <!-- Elenco Serie trovati -->
-            <div class="film text-center" v-for="serie in series">
+            <div class="film text-center" v-for="serie in series.results">
                 <div>
                     Titolo: {{serie.name}}
                 </div>
@@ -59,7 +59,7 @@
                 <div v-if="serie.original_language != 'en' && serie.original_language != 'us'&& serie.original_language != 'ja'">
                     Language:<img :src="'https:www.countryflags.io/' + serie.original_language + '/flat/32.png'">
                 </div>
-                <div v-else-if="serie.original_language = 'ja'">
+                <div v-else-if="serie.original_language == 'ja'">
                     Language: <img src="https:www.countryflags.io/jp/flat/32.png">
                 </div>
                 <div v-else-if="serie.original_language == 'en' || serie.original_language == 'us'">
