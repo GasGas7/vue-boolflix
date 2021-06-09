@@ -8,6 +8,8 @@ data: {
     query:"",
     films:[],
     series:[],
+    show_img:true,
+    show_descr:false
 },
 
 methods:{
@@ -32,6 +34,15 @@ methods:{
             console.error(e);
             alert("La chiamata all'API non è andata a buon fine, riprova più tardi. "+ e)
         })
+    },
+},
+mounted(){
+    let cover = document.getElementById("copertina_over");
+    cover.addEventListener("mouseover",function(){
+        this.show_img=false;
+        this.show_descr=true;
     }
+    )
 }
 })
+
