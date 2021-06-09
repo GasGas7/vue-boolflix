@@ -26,9 +26,10 @@
         <!-- Contenitore -->
         <div class="contenitore_films d-flex flex-wrap">
             <!-- Elenco Film trovati-->
-            <div class="film text-center" v-for="film in films.results">
+            <div class="col-4 text-center" v-for="film in films.results">
                 <div class="copertina">
-                    <img :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
+                    <img v-if="film.poster_path != 'null'" :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
+                    <img v-else src="./assets/img/not_found.png" alt="">
                 </div>
                 <div>
                     Titolo: {{film.title}}
@@ -52,9 +53,10 @@
             <!-- /Elenco Film trovati -->
 
             <!-- Elenco Serie trovati -->
-            <div class="film text-center" v-for="serie in series.results">
+            <div class="col-4 text-center" v-for="serie in series.results">
                 <div class="copertina">
-                    <img :src="'https://image.tmdb.org/t/p/w342'+ serie.poster_path" alt="">
+                    <img v-if="serie.poster_path != 'null'" :src="'https://image.tmdb.org/t/p/w342'+ serie.poster_path" alt="">
+                    <img v-else src="./assets/img/not_found.png" alt="">
                 </div>
                 <div>
                     Titolo: {{serie.name}}
