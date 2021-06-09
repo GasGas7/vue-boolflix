@@ -19,15 +19,15 @@
         <!-- Barra di ricerca film al click -->
         <div class="searching_bar">
             <input type="text" v-model="query">
-            <button type="submit" class="btn btn-primary" @click="searchFilms">Search</button>
+            <button type="submit" class="btn-sm btn-light p-1 rounded-pill" style="width: 150px; background-color: darkgrey; color: red;" @click="searchFilms">Search</button>
         </div>
         <!-- /Barra di ricerca film al click -->
 
         <!-- Contenitore -->
-        <div class="contenitore_films d-flex flex-wrap justify-content-center">
+        <div class="container-fluid d-flex flex-wrap justify-content-center">
             <!-- Elenco Film trovati-->
-            <div class="col-3 p-1 m-3 text-center" v-for="film in films.results">
-                <div class="copertina">
+            <div class="col-12 col-lg-6 col-xl-4 p-1 text-center" v-for="film in films.results">
+                <div class="copertina mb-2" style="height: 513px;">
                     <img v-if="film.poster_path == null" src="./assets/img/not_found_2.png" alt="">
                     <img v-else :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
                 </div>
@@ -53,7 +53,7 @@
             <!-- /Elenco Film trovati -->
 
             <!-- Elenco Serie trovati -->
-            <div class="col-3 p-1 m-3 text-center"  v-for="serie in series.results">
+            <div class="col-12 col-lg-6 col-xl-4 text-center"  v-for="serie in series.results">
                 <div class="copertina">
                     <img v-if="serie.poster_path != null" :src="'https://image.tmdb.org/t/p/w342'+ serie.poster_path" alt="">
                     <img v-else src="./assets/img/not_found_2.png" alt="">
