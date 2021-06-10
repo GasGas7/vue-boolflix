@@ -18,6 +18,8 @@ header {
   width: 300px;
   height: 35px;
   border-radius: 10px;
+  outline: none;
+font-size: 25px;
 }
 .bottone_ricerca {
   width: 150px;
@@ -49,7 +51,7 @@ main {
   display: none;
   color: white;
   width: 100%;
-  height: 60%;
+  height: 105%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,5 +62,12 @@ main {
 }
 .descrizione div {
   margin: 20px 0;
+}
+
+.descrizione .overview{
+    margin: auto;
+    width: 80%;
+    height: 40%;
+    overflow-y: auto;
 }
 /* /Main */

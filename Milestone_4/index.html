@@ -37,7 +37,6 @@
             <!-- Contenitore -->
             <div class="container-fluid d-flex flex-wrap">
                 <!-- Elenco Film trovati-->
-                <h2 class="col-12 titoletto">Film disponibili:</h2>
                 <div class="carta col-12 col-lg-6 col-xl-4 p-1 mb-3 d-flex align-items-center flex-column text-center"
                     v-for="film in films.results">
                     <!-- div per applicare hover -->
@@ -63,6 +62,11 @@
                                 <div>
                                     Rate: <h5>{{film.vote_average}}</h5>
                                 </div>
+                                <div class="overview">
+                                    <p>
+                                        {{film.overview}}
+                                    </p>
+                                </div>
                             </div>
                             <!-- /Descrizione -->
                         </div>
@@ -71,7 +75,6 @@
                 </div>
                 <!-- /Elenco Film trovati -->
 
-                <h2 class="col-12 titoletto">Serie disponibili:</h2>
                 <!-- Elenco Serie trovati -->
                 <div class="carta col-12 col-lg-6 col-xl-4 p-1 mb-3 d-flex align-items-center flex-column text-center"
                     v-for="serie in series.results">
@@ -98,6 +101,11 @@
                                 </div>
                                 <div>
                                     Rate:<h5>{{serie.vote_average}}</h5>
+                                </div>
+                                <div class="overview">
+                                    <p>
+                                        {{serie.overview}}
+                                    </p>
                                 </div>
                             </div>
                             <!-- /Descrizione -->
