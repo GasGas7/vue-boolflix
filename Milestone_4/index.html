@@ -26,7 +26,7 @@
             <!-- Barra di ricerca film al click -->
             <div class="searching_bar mr-3">
                 <input type="text" class="input_ricerca" v-model="query">
-                <button type="submit" class="bottone_ricerca" @click="searchFilms">Search</button>
+                <button type="submit" class="bottone_ricerca" @click="searchAll">Search</button>
             </div>
             <!-- /Barra di ricerca film al click -->
         </header>
@@ -37,6 +37,7 @@
             <!-- Contenitore -->
             <div class="container-fluid d-flex flex-wrap">
                 <!-- Elenco Film trovati-->
+                <h2 class="col-12 titoletto">Film disponibili:</h2>
                 <div class="carta col-12 col-lg-6 col-xl-4 p-1 mb-3 d-flex align-items-center flex-column text-center"
                     v-for="film in films.results">
                     <!-- div per applicare hover -->
@@ -47,7 +48,7 @@
                                 <img v-if="film.poster_path == null" src="./assets/img/not_found_2.png" alt="">
                                 <img v-else style="" :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
                             </div>
-                            
+                            <!-- /Immagine -->
                             <!-- Descrizione -->
                             <div class="descrizione">
                                 <div>
@@ -60,34 +61,50 @@
                                     Language:<img :src="getFlag(film.original_language)">
                                 </div>
                                 <div>
-                                    Voto del film: <h5>{{film.vote_average}}</h5>
+                                    Rate: <h5>{{film.vote_average}}</h5>
                                 </div>
                             </div>
+                            <!-- /Descrizione -->
                         </div>
                     </div>
                     <!-- /div per applicare hover -->
                 </div>
                 <!-- /Elenco Film trovati -->
 
+                <h2 class="col-12 titoletto">Serie disponibili:</h2>
                 <!-- Elenco Serie trovati -->
-                <!-- <div class="carta col-12 col-lg-6 col-xl-4 p-1 mb-3 d-flex align-items-center flex-column text-center"  v-for="serie in series.results">
-                    <div class="copertina"  style="height: 517px; background-color: black;">
-                        <img v-if="serie.poster_path != null" :src="'https://image.tmdb.org/t/p/w342'+ serie.poster_path" alt="">
-                        <img v-else src="./assets/img/not_found_2.png" alt="">
+                <div class="carta col-12 col-lg-6 col-xl-4 p-1 mb-3 d-flex align-items-center flex-column text-center"
+                    v-for="serie in series.results">
+                    <!-- div per applicare hover -->
+                    <div class="hovercard">
+                        <div class="copertina" style="height: 517px; background-color: black;">
+                            <!-- Immagine -->
+                            <div class="immagine">
+                                <img v-if="serie.poster_path != null"
+                                    :src="'https://image.tmdb.org/t/p/w342'+ serie.poster_path" alt="">
+                                <img v-else src="./assets/img/not_found_2.png" alt="">
+                            </div>
+                            <!-- /Immagine -->
+                            <!-- Descrizione -->
+                            <div class="descrizione">
+                                <div>
+                                    <h3>{{serie.name}}</h3>
+                                </div>
+                                <div v-if="serie.name != serie.original_name">
+                                    <h4>{{serie.original_name}}</h4>
+                                </div>
+                                <div>
+                                    Language:<img :src="getFlag(serie.original_language)">
+                                </div>
+                                <div>
+                                    Rate:<h5>{{serie.vote_average}}</h5>
+                                </div>
+                            </div>
+                            <!-- /Descrizione -->
+                        </div>
                     </div>
-                    <div>
-                        Titolo: {{serie.name}}
-                    </div>
-                    <div v-if="serie.name != serie.original_name">
-                        Titolo originale: {{serie.original_name}}
-                    </div>
-                    <div>
-                        Language:<img :src="getFlag(serie.original_language)">
-                    </div>
-                    <div>
-                        Voto della serie: {{serie.vote_average}}
-                    </div>
-                </div> -->
+                    <!-- div per applicare hover -->
+                </div>
                 <!-- /Elenco Serie trovati -->
             </div>
             <!-- /Contenitore -->
