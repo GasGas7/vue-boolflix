@@ -39,29 +39,33 @@
                 <!-- Elenco Film trovati-->
                 <div class="carta col-12 col-lg-6 col-xl-4 p-1 mb-3 d-flex align-items-center flex-column text-center"
                     v-for="film in films.results">
-                    <div id="copertina_over" class="copertina mb-2">
-                        <div class="immagine" v-show="show_img">
-                            <img v-if="film.poster_path == null" src="./assets/img/not_found_2.png" alt="">
-                            <img v-else style="" :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
-                        </div>
-
-                        <div class="descrizione" v-show="show_descr">
-                            <div>
-                                <h3>{{film.title}}</h3>
+                    <!-- div per applicare hover -->
+                    <div class="hovercard">
+                        <div class="copertina">
+                            <!-- Immagine -->
+                            <div class="immagine">
+                                <img v-if="film.poster_path == null" src="./assets/img/not_found_2.png" alt="">
+                                <img v-else style="" :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
                             </div>
-                            <div v-if="film.title !== film.original_title">
-                                <h4>{{film.original_title}}</h4>
-                            </div>
-                            <div>
-                                Language:<img :src="getFlag(film.original_language)">
-                            </div>
-                            <div>
-                                Voto del film: <h5>{{film.vote_average}}</h5>
+                            
+                            <!-- Descrizione -->
+                            <div class="descrizione">
+                                <div>
+                                    <h3>{{film.title}}</h3>
+                                </div>
+                                <div v-if="film.title !== film.original_title">
+                                    <h4>{{film.original_title}}</h4>
+                                </div>
+                                <div>
+                                    Language:<img :src="getFlag(film.original_language)">
+                                </div>
+                                <div>
+                                    Voto del film: <h5>{{film.vote_average}}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
+                    <!-- /div per applicare hover -->
                 </div>
                 <!-- /Elenco Film trovati -->
 

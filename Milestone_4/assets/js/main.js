@@ -8,9 +8,6 @@ data: {
     query:"",
     films:[],
     series:[],
-    show_img:false,
-    show_descr:true,
-    cover:null
 },
 
 methods:{
@@ -36,19 +33,12 @@ methods:{
     },
     
     getFlag(code){
-        if(code == "en"){code = 'gb'};
-        if(code == "ja"){code = 'jp'};
-        if(code == "da"){code = 'dk'};
+        if(code == "en")code = 'gb';
+        if(code == "ja")code = 'jp';
+        if(code == "da")code = 'dk';
 
         return `https:www.countryflags.io/${code}/flat/32.png`
     }
 },
-mounted(){
-     this.cover = document.getElementById("copertina_over").addEventListener("mouseover",function(){
-        this.show_img=false;
-        this.show_descr=true;
-    }
-    )
-}
 })
 
