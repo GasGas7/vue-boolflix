@@ -67,7 +67,11 @@ main {
 .descrizione .overview {
   margin: auto;
   width: 80%;
-  height: 40%;
+  height: 30%;
   overflow-y: auto;
 }
+.descrizione .overview p{
+  line-height: 40px;  
+}
+
 /* /Main */
