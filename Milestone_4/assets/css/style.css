@@ -19,7 +19,7 @@ header {
   height: 35px;
   border-radius: 10px;
   outline: none;
-font-size: 25px;
+  font-size: 25px;
 }
 .bottone_ricerca {
   width: 150px;
@@ -64,10 +64,10 @@ main {
   margin: 20px 0;
 }
 
-.descrizione .overview{
-    margin: auto;
-    width: 80%;
-    height: 40%;
-    overflow-y: auto;
+.descrizione .overview {
+  margin: auto;
+  width: 80%;
+  height: 40%;
+  overflow-y: auto;
 }
 /* /Main */

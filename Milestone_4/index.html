@@ -34,7 +34,11 @@
 
         <!-- Site_Main -->
         <main>
-            <div id="errore" v-if="errore == true"><h1>La chiamata all'API non è andata a buon fine, riprova più tardi. {{errore_testo}}</h1> </div>
+            <div id="errore" v-if="errore == true">
+                <h1>
+                    La chiamata all'API non è andata a buon fine, riprova più tardi. {{errore_testo}}
+                </h1>
+            </div>
             <!-- Contenitore -->
             <div class="container-fluid d-flex flex-wrap">
                 <!-- Elenco Film trovati-->
@@ -51,23 +55,33 @@
                             <!-- /Immagine -->
                             <!-- Descrizione -->
                             <div class="descrizione">
+                                <!-- titolo -->
                                 <div>
                                     <h3>{{film.title}}</h3>
                                 </div>
+                                <!-- /titolo -->
+                                <!-- titolo_originale -->
                                 <div v-if="film.title !== film.original_title">
                                     <h4>{{film.original_title}}</h4>
                                 </div>
+                                <!-- /titolo_originale -->
+                                <!-- immmagine_lingua -->
                                 <div>
                                     Language:<img :src="getFlag(film.original_language)">
                                 </div>
+                                <!-- /immmagine_lingua -->
+                                <!-- rate -->
                                 <div>
                                     Rate: <h5>{{film.vote_average}}</h5>
                                 </div>
+                                <!-- /rate -->
+                                <!-- overview -->
                                 <div class="overview">
                                     <p>
                                         {{film.overview}}
                                     </p>
                                 </div>
+                                <!-- /overview -->
                             </div>
                             <!-- /Descrizione -->
                         </div>
@@ -91,23 +105,33 @@
                             <!-- /Immagine -->
                             <!-- Descrizione -->
                             <div class="descrizione">
+                                <!-- titolo -->
                                 <div>
                                     <h3>{{serie.name}}</h3>
                                 </div>
+                                <!-- /titolo -->
+                                <!-- titolo_originale -->
                                 <div v-if="serie.name != serie.original_name">
                                     <h4>{{serie.original_name}}</h4>
                                 </div>
+                                <!-- /titolo_originale -->
+                                <!-- immmagine_lingua -->
                                 <div>
                                     Language:<img :src="getFlag(serie.original_language)">
                                 </div>
+                                <!-- /immmagine_lingua -->
+                                <!-- rate -->
                                 <div>
                                     Rate:<h5>{{serie.vote_average}}</h5>
                                 </div>
+                                <!-- /rate -->
+                                <!-- overview -->
                                 <div class="overview">
                                     <p>
                                         {{serie.overview}}
                                     </p>
                                 </div>
+                                <!-- /overview -->
                             </div>
                             <!-- /Descrizione -->
                         </div>

@@ -56,11 +56,11 @@ const app = new Vue({
                     this.series = resp[1].data;
                 }).catch(e => {
                     console.error(e);
-                    this.errore_testo=`${error(e)}`
+                    this.errore_testo=`${e}`
                     return this.errore = true;
                 })
             
-            },
+        },
         /* /API CALLS ==> Con documentazione axios: Performing multiple concurrent requests 😎😎 */
 
         /* Funzione per prendere le bandiere */
