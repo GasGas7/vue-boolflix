@@ -34,6 +34,7 @@
 
         <!-- Site_Main -->
         <main>
+            <div id="errore" v-if="errore == true"><h1>La chiamata all'API non è andata a buon fine, riprova più tardi. {{errore_testo}}</h1> </div>
             <!-- Contenitore -->
             <div class="container-fluid d-flex flex-wrap">
                 <!-- Elenco Film trovati-->

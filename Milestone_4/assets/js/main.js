@@ -8,6 +8,8 @@ const app = new Vue({
         query: "",
         films: [],
         series: [],
+        errore: false,
+        errore_testo:""
     },
 
     methods: {
@@ -47,12 +49,18 @@ const app = new Vue({
         searchAll() {
             Promise.all([this.getFilms(), this.getSerie()])
                 .then(resp => {
+                    this.errore = false;
                     console.log(resp[0].data);
                     console.log(resp[1].data);
                     this.films = resp[0].data;
                     this.series = resp[1].data;
+                }).catch(e => {
+                    console.error(e);
+                    this.errore_testo=`${error(e)}`
+                    return this.errore = true;
                 })
-        },
+            
+            },
         /* /API CALLS ==> Con documentazione axios: Performing multiple concurrent requests 😎😎 */
 
         /* Funzione per prendere le bandiere */
@@ -65,6 +73,7 @@ const app = new Vue({
             return `https:www.countryflags.io/${code}/flat/32.png`
         }
         /* Funzione per prendere le bandiere */
-    },
+    
+}
 })
 
