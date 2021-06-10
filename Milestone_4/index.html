@@ -42,8 +42,7 @@
                     <div id="copertina_over" class="copertina mb-2">
                         <div class="immagine" v-show="show_img">
                             <img v-if="film.poster_path == null" src="./assets/img/not_found_2.png" alt="">
-                            <img v-else style="" :src="'https://image.tmdb.org/t/p/w342'+film.poster_path"
-                            alt="">
+                            <img v-else style="" :src="'https://image.tmdb.org/t/p/w342'+film.poster_path" alt="">
                         </div>
 
                         <div class="descrizione" v-show="show_descr">
@@ -53,16 +52,8 @@
                             <div v-if="film.title !== film.original_title">
                                 Titolo originale: {{film.original_title}}
                             </div>
-                            <div
-                                v-if="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">
-                                Language:<img
-                                    :src="'https:www.countryflags.io/' + film.original_language + '/flat/32.png'">
-                            </div>
-                            <div v-else-if="film.original_language == 'ja'">
-                                Language: <img src="https:www.countryflags.io/jp/flat/32.png">
-                            </div>
-                            <div v-else-if="film.original_language == 'en' || film.original_language == 'us'">
-                                Language: <img src="https:www.countryflags.io/gb/flat/32.png">
+                            <div>
+                                Language:<img :src="getFlag(film.original_language)">
                             </div>
                             <div>
                                 Voto del film: {{film.vote_average}}
@@ -86,14 +77,8 @@
                     <div v-if="serie.name != serie.original_name">
                         Titolo originale: {{serie.original_name}}
                     </div>
-                    <div v-if="serie.original_language != 'en' && serie.original_language != 'us'&& serie.original_language != 'ja'">
-                        Language:<img :src="'https:www.countryflags.io/' + serie.original_language + '/flat/32.png'">
-                    </div>
-                    <div v-else-if="serie.original_language == 'ja'">
-                        Language: <img src="https:www.countryflags.io/jp/flat/32.png">
-                    </div>
-                    <div v-else-if="serie.original_language == 'en' || serie.original_language == 'us'">
-                        Language: <img src="https:www.countryflags.io/gb/flat/32.png">
+                    <div>
+                        Language:<img :src="getFlag(serie.original_language)">
                     </div>
                     <div>
                         Voto della serie: {{serie.vote_average}}
