@@ -47,16 +47,16 @@
 
                         <div class="descrizione" v-show="show_descr">
                             <div>
-                                Titolo: {{film.title}}
+                                <h3>{{film.title}}</h3>
                             </div>
                             <div v-if="film.title !== film.original_title">
-                                Titolo originale: {{film.original_title}}
+                                <h4>{{film.original_title}}</h4>
                             </div>
                             <div>
                                 Language:<img :src="getFlag(film.original_language)">
                             </div>
                             <div>
-                                Voto del film: {{film.vote_average}}
+                                Voto del film: <h5>{{film.vote_average}}</h5>
                             </div>
                         </div>
                     </div>
